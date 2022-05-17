@@ -1,0 +1,43 @@
+  <div class="mb-3">
+                          <label for="">author</label>
+                          <input type="text" class="form-control" name="author" value="<?= $row['author']; ?>">
+                      </div> 
+                      
+                       <div class="mb-3">
+                          <label for="">price</label>
+                          <input type="text" class="form-control" name="price" value="<?= $row['price']; ?>">
+                      </div> 
+                       <div class="mb-3">
+                          <label for="">discount_price</label>
+                          <input type="text" class="form-control" name="discount_price" value="<?= $row['discount_price']; ?>">
+                      </div>
+                      <div class="mb-3">
+                          <label for="">cover</label>
+                          <input type="file" class="form-control" name="cover" value="<?= $row['cover']; ?>">
+                      </div>
+                      <div class="mb-3">
+                          <label for="">isbn</label>
+                          <input type="text" class="form-control" name="isbn" value="<?= $row['isbn']; ?>">
+                      </div>
+                      <div class="mb-3">
+                          <label for="">nop</label>
+                          <input type="text" class="form-control" name="nop" value="<?= $row['nop']; ?>">
+                      </div>
+                              <div class="mb-3">
+                                  <input type="submit" class="btn btn-info w-100" name="submit">
+                              </div>
+                          </form>
+                          <?php
+                          if(isset($_POST['submit'])){
+                              $title = $_POST['title'];
+                              $author= $_POST['author'];
+                              $genre_id= $_POST['genre_id'];
+                              $description = $_POST['description'];
+                              $price = $_POST['price'];
+                              $discount_price= $_POST['discount_price'];
+                              $isbn= $_POST['isbn'];
+                              $nop= $_POST['nop']; 
+      
+                              $image= $_FILES['cover']['name'];
+                              $tmp_image= $_FILES['cover']['tmp_name'];
+                              move_uploaded_file($tmp_image,"images/$image
